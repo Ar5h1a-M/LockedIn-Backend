@@ -1,3 +1,4 @@
+// API/server.js
 require('dotenv').config();
 const db = require('./db');
 const app = require('./app');
@@ -12,6 +13,5 @@ const app = require('./app');
   }
 
   const port = process.env.PORT || 3000;
-  app.listen(port, () => console.log(API listening on ${port}));  // <-- backticks
+  app.listen(port, () => console.log(`API listening on ${port}`));
 })();
-
