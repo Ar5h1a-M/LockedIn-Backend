@@ -1,4 +1,3 @@
-// API/server.js
 require('dotenv').config();
 const db = require('./db');
 const app = require('./app');
@@ -12,6 +11,6 @@ const app = require('./app');
     process.exit(1);
   }
 
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3000;   // HTTP port, not 3306
   app.listen(port, () => console.log(`API listening on ${port}`));
 })();
