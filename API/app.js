@@ -6,10 +6,15 @@ const groups = require('./routes/groups');
 const progress = require('./routes/progress');
 const notify = require('./routes/notify');
 
+// health
+app.get('/health', (_req, res) => res.json({ ok: true }));
+
 const app = express();
 app.set('trust proxy', 1);
 app.use(express.json());
 app.use(passport.initialize());
+
+
 
 // CORS (point to your Vercel URL in env)
 app.use((req, res, next) => {
@@ -21,8 +26,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// health
-app.get('/health', (_req, res) => res.json({ ok: true }));
+
 
 // Google OAuth
 app.get('/auth/google',
