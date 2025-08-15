@@ -6,11 +6,13 @@ const groups = require('./routes/groups');
 const progress = require('./routes/progress');
 const notify = require('./routes/notify');
 
-// health
-app.get('/health', (_req, res) => res.json({ ok: true }));
+
+
 
 const app = express();
 app.set('trust proxy', 1);
+// health
+app.get('/health', (_req, res) => res.json({ ok: true }));
 app.use(express.json());
 app.use(passport.initialize());
 
